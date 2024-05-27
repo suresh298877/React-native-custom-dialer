@@ -3,11 +3,20 @@ package com.awesomeproject;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import com.github.wumke.RNImmediatePhoneCall.RNImmediatePhoneCallPackage;
 
 public class MainActivity extends ReactActivity {
 
+  @Override
+  public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    RNImmediatePhoneCallPackage.onRequestPermissionsResult(requestCode, permissions, grantResults); // very important
+                                                                                                    // event callback
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+  }
+
   /**
-   * Returns the name of the main component registered from JavaScript. This is used to schedule
+   * Returns the name of the main component registered from JavaScript. This is
+   * used to schedule
    * rendering of the component.
    */
   @Override
@@ -16,8 +25,10 @@ public class MainActivity extends ReactActivity {
   }
 
   /**
-   * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
-   * you can specify the renderer you wish to use - the new renderer (Fabric) or the old renderer
+   * Returns the instance of the {@link ReactActivityDelegate}. There the RootView
+   * is created and
+   * you can specify the renderer you wish to use - the new renderer (Fabric) or
+   * the old renderer
    * (Paper).
    */
   @Override
@@ -40,7 +51,8 @@ public class MainActivity extends ReactActivity {
 
     @Override
     protected boolean isConcurrentRootEnabled() {
-      // If you opted-in for the New Architecture, we enable Concurrent Root (i.e. React 18).
+      // If you opted-in for the New Architecture, we enable Concurrent Root (i.e.
+      // React 18).
       // More on this on https://reactjs.org/blog/2022/03/29/react-v18.html
       return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }

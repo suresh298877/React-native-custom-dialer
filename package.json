@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "18.1.0",
-    "react-native": "0.70.15"
+    "react-native": "0.70.15",
+    "react-native-callkeep": "^4.3.13",
+    "react-native-immediate-phone-call": "^2.0.0",
+    "react-native-phone-call": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
